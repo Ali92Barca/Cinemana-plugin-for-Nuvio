@@ -1,6 +1,6 @@
 
 {
-  "filename": "providers/cinemana-built.js"
+  "filename": "manifest.js"
   "version": "1.0.0",
   "scrapers": [
     {
