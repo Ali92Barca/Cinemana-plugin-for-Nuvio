@@ -27,7 +27,7 @@ jobs:
         run: |
           npm init -y
           npm install --save-dev esbuild
-          npx esbuild providers/cinemana.js --bundle --platform=browser --format=cjs --outfile=providers/cinemana.js
+          npx esbuild providers/cinemana.js --bundle --platform=browser --format=cjs --outfile=providers/cinemana-built.js
 
       - name: Commit built provider
         run: |
