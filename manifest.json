@@ -2,6 +2,18 @@
 {
   "name": "Cinemana",
   "version": "1.0.0",
-  "scrapers": []
+  "scrapers": [
+    {
+      "id": "cinemana",
+      "name": "Cinemana",
+      "description": "Cinemana streaming provider",
+      "version": "1.0.0",
+      "author": "Ali",
+      "supportedTypes": ["movie", "tv"],
+      "filename": "providers/cinemana.js",
+      "enabled": true,
+      "formats": ["mp4", "m3u8", "mkv"],
+      "contentLanguage": ["ar"]
+    }
+  ]
 }
-
