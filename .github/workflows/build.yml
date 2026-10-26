@@ -1,1 +1,39 @@
 
+name: Build Cinemana Provider
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build provider
+        run: |
+          npm init -y
+          npm install --save-dev esbuild
+          npx esbuild providers/cinemana.js --bundle --platform=browser --format=cjs --outfile=providers/cinemana.js
+
+      - name: Commit built provider
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add providers/cinemana.js
+          git diff --cached --quiet || git commit -m "Build Cinemana provider"
+          git push
+
