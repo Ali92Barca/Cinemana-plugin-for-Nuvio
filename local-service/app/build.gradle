@@ -1,0 +1,13 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.ali.cinemana.local'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'com.ali.cinemana.local'
+        minSdk 26
+        targetSdk 28
+        versionCode 1
+        versionName '1.0.0'
+    }
+}
